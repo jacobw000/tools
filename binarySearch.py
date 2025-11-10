@@ -5,12 +5,15 @@ def search(nlist):
     # Initializing found to be able to become True if data item is found
     found = False
 
+    # Initializing count to say what position the number is found in
+    count = 1
+
     # First pointer at first position
     first = 0
 
     # Last pointer at last position
     last = len(nlist)-1
-
+    
     # Checks if found is False and first isn't larger/equal to last
     # Either of these conditions being met means the search would be over
     while (found == False and first <= last):
@@ -36,9 +39,11 @@ def search(nlist):
             # Makes the search continue searching the lower half of the list
             last = mid - 1
 
+        # Increases count by 1 to show search has looped once
+        count = count + 1
 
     # Output statement on whether the item has been found or not
     if (found):
-        print("The data item has been found.")
+        print("The data item has been found in", count, "attempt(s).")
     else:
         print ("The data item has not been found.")
